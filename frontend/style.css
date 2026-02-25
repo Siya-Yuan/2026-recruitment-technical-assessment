@@ -33,8 +33,13 @@ For now, there's three main boxes, and i'll work through them in order
 
     display: flex;
     flex-direction: row;
-
+    transition: 0.3s ease;
 }
+
+.logoWrapper:hover {
+    filter: brightness(1.4);
+}
+
 .logoWrapper img {
     width: 70px;
     height: 70px;
@@ -47,6 +52,7 @@ For now, there's three main boxes, and i'll work through them in order
 }
 
 .iconWrapper {
+    transition: 0.1s ease;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,9 +62,15 @@ For now, there's three main boxes, and i'll work through them in order
 
     background: none;
     border-radius: 5px;
-    border: 2px solid #F1853B;
+    border: 1px solid #ee955b;
 
     margin: 5px;
+}
+
+.iconWrapper:hover {
+    border: 2px solid #f36e15;
+    background-color: #f9f9f9;
+
 }
 
 .iconWrapper img {
@@ -75,7 +87,6 @@ For now, there's three main boxes, and i'll work through them in order
     grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
     margin-top: 10px;
-
 }
 
 .searchBarWrapper {
@@ -89,6 +100,10 @@ For now, there's three main boxes, and i'll work through them in order
     border-radius: 5px;
     border: 2px solid #E7E7E7;
     padding: 10px;
+}
+
+.searchBarWrapper:hover {
+    border: 2px solid #000000;
 }
 
 .searchBarWrapper img {
@@ -109,7 +124,7 @@ For now, there's three main boxes, and i'll work through them in order
     align-items: center;
 
     border-radius: 15px;
-    border: 2px solid #F1853B;
+    border: 3px solid #F1853B;
     padding: 10px;
 }
 
@@ -127,7 +142,7 @@ For now, there's three main boxes, and i'll work through them in order
     margin-left: auto;
 
     border-radius: 15px;
-    border: 2px solid #F1853B;
+    border: 3px solid #F1853B;
     padding: 10px;
 }
 
@@ -162,12 +177,15 @@ For now, there's three main boxes, and i'll work through them in order
 
     border-radius: 10px;
     gap: 5px;
+    
+    transition: filter 0.2s ease;
 }
 
 /*
 To make the text go on top of the image
 */
 .nameText {
+    font-size: 1.2rem;;
     display: flex;
     background-color: #F1853B;
     color: white;
@@ -179,7 +197,7 @@ To make the text go on top of the image
     border-radius: 10px;
 
     width: 90%;
-    height: 5%;
+    height: 8%;
     object-fit: cover;
     align-items: center;
 }
@@ -199,7 +217,12 @@ To make the text go on top of the image
     border-radius: 20px;
 }
 
-/*
+/*Hover animations*/
+.card:hover img {
+    filter: brightness(0.7);
+}
+
+/*----------------------------------------------------------------------------------------
 I recreated the website on a large moniter. I'm using media queries to try 
 and make it look good across mulitple screen sizes
 */
@@ -263,6 +286,14 @@ and make it look good across mulitple screen sizes
 
     .card {
         aspect-ratio: 30/9;
+    }
+
+    .card img {
+        filter: brightness(0.7);
+    }
+
+    .card:hover img {
+        filter: brightness(1);
     }
 
     .searchBar {

@@ -1,0 +1,216 @@
+body {
+  font-family: 'Google Sans', sans-serif;
+}
+
+/*
+For now, there's three main boxes, and i'll work through them in order
+*/
+
+.iconBar {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    border-bottom: 2px solid #b8b7b7;
+}
+
+.navLeft {
+    display: flex;
+    flex-direction: row;
+}
+
+.navRight {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: auto;
+}
+
+.logoWrapper {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+
+}
+.logoWrapper img {
+    width: 70px;
+    height: 70px;
+}
+
+.logoWrapper p {
+    color:#F1853B;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.iconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 50px;
+    height: 50px;
+
+    background: none;
+    border-radius: 5px;
+    border: 2px solid #F1853B;
+
+    margin: 5px;
+}
+
+.iconWrapper img {
+    width: 40px;
+    height: 40px;
+}
+
+/*
+--------------------------------------------------------------------------------------
+*/
+
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+}
+
+.filterWrapper {
+    color:#F1853B;
+    font-weight: bold;
+
+    width: 130px;
+
+    margin: 10px;
+
+    display: flex;
+    flex-direction:row;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+    border: 2px solid #F1853B;
+    padding: 10px;
+}
+
+.searchBarWrapper {
+    display: flex;
+    align-items: center;
+    color: #b8b7b7;
+    margin: 10px auto;
+
+    width: 1100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #E7E7E7;
+    padding: 10px;
+}
+
+.searchBarWrapper img {
+    padding: 5px;
+}
+
+.sortWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 110px;
+
+    color: #F1853B;
+    font-weight: bold;
+    margin: 10px;
+    margin-left: auto;
+
+    border-radius: 15px;
+    border: 2px solid #F1853B;
+    padding: 10px;
+}
+
+/*
+--------------------------------------------------------------------------------------
+*/
+
+.listings {
+}
+
+.photoGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 25vw);
+    grid-gap: 0px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    overflow: hidden;
+    gap: 5px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 10px;
+    gap: 5px;
+}
+
+/*
+To make the text go on top of the image
+*/
+.nameText {
+    display: flex;
+    background-color: #F1853B;
+    color: white;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+
+
+    padding: 10px;
+    border-radius: 10px;
+
+    width: 93%;
+    height: 5%;
+    object-fit: cover;
+    align-items: center;
+}
+
+.roomText {
+    display: flex;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+
+    height: 3%;
+    align-items: center;
+    
+    padding: 10px;
+    line-height: 0;
+    border-radius: 20px;
+}
+
+/*
+I recreated the website on a large moniter. I'm using media queries to try 
+and make it look good across mulitple screen sizes
+*/
+
+@media (max-width: 1200px) {
+    .photoGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .photoGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

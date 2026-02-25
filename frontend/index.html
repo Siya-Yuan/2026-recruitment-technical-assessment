@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+        <title> My Website</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class = "iconBar">
+            <!--Okay so now i have to place the logos here-->
+            <div class = "navLeft"> <!--Logo and text go on the left-->
+                <div class = "logoWrapper">
+                    <img id = "logo" src = "assets/freeRoomsLogo.png">
+                    <p>Freerooms</p>
+
+                </div>
+
+            </div>
+
+            <div class = "navRight"> <!--Grouping the icons that go on the right-->
+                <button class = "iconWrapper">
+                    <img id = "searchIcon" src = "assets/searchIcon.png">
+                </button>
+
+                <button class = "iconWrapper">
+                    <img id = "gridIcon" src = "assets/gridIcon.png">
+                </button>
+
+                <button class = "iconWrapper">
+                    <img id = "mapIcon" src = "assets/mapIcon.png">
+                </button>
+
+                <button class = "iconWrapper">
+                    <img id = "darkIcon" src = "assets/darkIcon.png">
+                </button>
+            </div>
+
+
+        </div>
+
+        
+        <!--3 nested boxes required: filters, search, sort-->
+        <div class = "searchBar">
+            <div class = "filterWrapper">
+                <img id = "filterIcon" src = "assets/filterIcon.png">
+                <span>Filters</span>
+            </div>
+
+            <div class = "searchBarWrapper">
+                <img id = "greyFilterIcon" src = "assets/greySearchIcon.png">
+                <span>Search for a building...</span>
+            </div>
+
+            <div class = "sortWrapper">
+                <img id = "sortIcon" src = "assets/sortIcon.png">
+                <span>Sort</span>
+            </div>
+
+
+        </div>
+
+
+        <!--Where the json data and images will load-->
+        <div class = "listings">
+            <div class = "photoGrid">
+
+            </div>
+        </div>
+            
+        <script src="script.js" defer></script>
+    </body>
+</html>

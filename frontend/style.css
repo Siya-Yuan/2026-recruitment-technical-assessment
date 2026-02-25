@@ -45,13 +45,14 @@ For now, there's three main boxes, and i'll work through them in order
     font-size: 2.5rem;
     font-weight: bold;
 }
+
 .iconWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 
     background: none;
     border-radius: 5px;
@@ -61,8 +62,8 @@ For now, there's three main boxes, and i'll work through them in order
 }
 
 .iconWrapper img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 /*
@@ -70,12 +71,29 @@ For now, there's three main boxes, and i'll work through them in order
 */
 
 .searchBar {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
     margin-top: 10px;
 
 }
 
+.searchBarWrapper {
+    display: flex;
+    align-items: center;
+    color: #b8b7b7;
+    margin: 10px auto;
+
+    width: 1100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #E7E7E7;
+    padding: 10px;
+}
+
+.searchBarWrapper img {
+    padding: 5px;
+}
 .filterWrapper {
     color:#F1853B;
     font-weight: bold;
@@ -95,22 +113,6 @@ For now, there's three main boxes, and i'll work through them in order
     padding: 10px;
 }
 
-.searchBarWrapper {
-    display: flex;
-    align-items: center;
-    color: #b8b7b7;
-    margin: 10px auto;
-
-    width: 1100px;
-    height: 30px;
-    border-radius: 5px;
-    border: 2px solid #E7E7E7;
-    padding: 10px;
-}
-
-.searchBarWrapper img {
-    padding: 5px;
-}
 
 .sortWrapper {
     display: flex;
@@ -139,11 +141,11 @@ For now, there's three main boxes, and i'll work through them in order
 .photoGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 25vw);
     grid-gap: 0px;
 }
 
 .card {
+    aspect-ratio: 9/10;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -173,11 +175,10 @@ To make the text go on top of the image
     bottom: 5px;
     left: 5px;
 
-
     padding: 10px;
     border-radius: 10px;
 
-    width: 93%;
+    width: 90%;
     height: 5%;
     object-fit: cover;
     align-items: center;
@@ -203,14 +204,97 @@ I recreated the website on a large moniter. I'm using media queries to try
 and make it look good across mulitple screen sizes
 */
 
+/*For Laptops*/
+@media (max-width: 1500px) {
+    .searchBarWrapper {
+        width: 900px;
+    }
+
+    .nameText {
+        width: 88%;
+    }
+
+}
+
+/*For Tablets like ipad*/
 @media (max-width: 1200px) {
     .photoGrid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .searchBarWrapper {
+        width: 600px;
+    }
 }
 
-@media (max-width: 750px) {
+/*in-between*/
+@media (max-width: 900px) {
+    .photoGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .searchBar {
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: auto auto;
+    }
+
+    .filterWrapper {
+        grid-column: 1/2;
+        grid-row: 2;
+    }
+
+    .searchBarWrapper {
+        width: 600px;
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+
+    .sortWrapper {
+        grid-column: 2/3;
+        grid-row: 2;
+    }
+}
+
+/*For Phones*/
+@media (max-width: 600px) {
     .photoGrid {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card {
+        aspect-ratio: 30/9;
+    }
+
+    .searchBar {
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: auto auto;
+    }
+
+    .filterWrapper {
+        grid-column: 1/2;
+        grid-row: 2;
+    }
+
+    .searchBarWrapper {
+        width: 400px;
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+
+    .sortWrapper {
+        grid-column: 2/3;
+        grid-row: 2;
+    }
+
+    .nameText {
+        background: none; 
+        align-items: center;
+        height: auto;
+        right: auto;
+        font-size: 1.2rem;
+    }
+
+    .logoWrapper p {
+        display: none;
     }
 }

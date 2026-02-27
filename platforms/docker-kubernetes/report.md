@@ -11,6 +11,8 @@ Hello!
 I initally went for a very standard dockerfile. I have very little experience with any of these tools and my understanding now is still low.
 
 Once I had a basic dockerfile, I noticed how my laptop got loud and hot everytime I ran the container, and so I wanted to reduce the docker image size. I went from 2 gb~ to 400 mb~.
+- I was able to do this through using alpine which was so much more lightweight as a base image
+- I tried to implement some form of the multi stage build
 
 I modified the server.ts file in the src folder because I didn't know how to view the localhost website to check if the api returned the data correctly. I changed the localhost to 0.0.0.0 to be more open so I could use port 3000.
 

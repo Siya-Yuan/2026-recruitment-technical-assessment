@@ -1,0 +1,23 @@
+#base image
+FROM node:24.10
+
+#change directories to execute commands
+WORKDIR /app
+
+
+#copy files into the container in app
+COPY package.json /app/
+
+#copy everything else 
+COPY . .
+
+#reading, download dependencies inside the container before application starts 
+RUN npm install 
+
+#build dist folder
+RUN npm run build
+
+EXPOSE 3000
+
+#Starts application
+CMD ["node", "dist/server.js"]

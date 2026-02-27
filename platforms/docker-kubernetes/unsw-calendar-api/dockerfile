@@ -1,5 +1,5 @@
 #base image
-FROM node:24.10-alpine
+FROM node:24.10-alpine AS build
 
 #change directories to execute commands
 WORKDIR /app
@@ -9,13 +9,21 @@ WORKDIR /app
 COPY package.json /app/
 
 #copy everything else 
-COPY . .
+#COPY . .
 
 #reading, download dependencies inside the container before application starts 
-RUN npm install 
+RUN npm install
+
+#optmising layer caching
+COPY . . 
 
 #build dist folder
 RUN npm run build
+
+#trying out multi stage build
+FROM node:24.10-alpine
+
+COPY --from=build /app /app
 
 EXPOSE 3000
 

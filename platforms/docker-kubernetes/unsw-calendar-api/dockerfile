@@ -1,5 +1,5 @@
 #base image
-FROM node:24.10
+FROM node:24.10-alpine
 
 #change directories to execute commands
 WORKDIR /app

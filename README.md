@@ -2,4 +2,4 @@
 
 Hi!
 
-I attempted the **frontend** task. My work is found inside the frontend folder :)
+I attempted the **frontend** and **platforms** tasks :)
